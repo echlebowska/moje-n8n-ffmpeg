@@ -1,4 +1,6 @@
+FROM mwader/static-ffmpeg:latest AS ffmpeg
 FROM n8nio/n8n:2.9.1
 USER root
-RUN apt-get update && apt-get install -y ffmpeg
+COPY --from=ffmpeg /ffmpeg /usr/local/bin/
+COPY --from=ffmpeg /ffprobe /usr/local/bin/
 USER node
