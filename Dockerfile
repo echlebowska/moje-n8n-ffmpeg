@@ -4,4 +4,3 @@ USER root
 COPY --from=ffmpeg /ffmpeg /usr/local/bin/
 COPY --from=ffmpeg /ffprobe /usr/local/bin/
 USER node
-RUN npm install n8n-nodes-apify
